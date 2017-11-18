@@ -1,0 +1,6 @@
+<form class="form" action="/new-trade" method="post">
+  <label for="cost">Enter an amount in dollars</label>
+  <input type="number" name="cost" value="0" min="10">
+  <button type="submit">buy</button>
+  <input type="hidden" name="price" value="<%= @bitcoin.price %>">
+</form>

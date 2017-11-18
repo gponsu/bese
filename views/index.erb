@@ -1,0 +1,28 @@
+<a id='new-trade' href="/new-trade">+</a>
+
+<table class="component trades">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Price</th>
+      <th scope="col">Volume</th>
+      <th scope="col">Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trades.each_with_index do |trade, index| %>
+      <tr class="trade">
+        <th scope="row"><%= index + 1 %></th>
+        <td>$<%= trade.price %></td>
+        <td>฿<%= trade.volume.round(4) %></td>
+        <td>$<%= trade.cost %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr class="balance">
+      <th scope="row" colspan="3">Balance:</td>
+      <td colspan="1">$<%= @balances.round(2) %></td>
+    </tr>
+  </tfoot>
+</table>

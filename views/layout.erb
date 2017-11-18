@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bitcoin price</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper">
+        <span>Bitcoin exchange</span>
+      </div>
+    </header>
+    <section class="main">
+      <div class="wrapper">
+        <div class="component price">
+          <div class="price">
+            <%= @bitcoin.price %> USD
+          </div>
+          <div class="change <%= @bitcoin.falling? ? 'falling' : '' %>">
+            <%= @bitcoin.change %> %
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="board">
+      <div class="wrapper">
+        <%= yield %>
+      </div>
+    </section>
+  </body>
+</html>
