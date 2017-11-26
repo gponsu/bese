@@ -5,6 +5,12 @@ require_relative 'services/balances'
 
 configure do
   set :bind, '0.0.0.0'
+  set :show_exceptions, :after_handler
+end
+
+error Trades::Error do
+  'The database server was not found.
+   Please verify that it is configured and working correctly'
 end
 
 before do
